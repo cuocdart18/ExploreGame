@@ -1,5 +1,9 @@
 package exeploreGame;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+
 /**
  *
  * @author srb
@@ -10,15 +14,24 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         myinit();
     }
-    
-    public final void myinit(){
-        setSize(1200,750);
+
+    public final void myinit() {
+        setSize(1000, 750);
         setResizable(false);
+        setAlwaysOnTop(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0); // Thoát ứng dụng
+            }
+        });
+
         gamePannel = new GamePannel();
 
         add(gamePannel);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
