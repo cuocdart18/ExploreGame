@@ -83,15 +83,15 @@ public class GamePannel8 extends javax.swing.JPanel {
                 score = 120;
                 break;
         }
-        scoreLabel.setText("score : " + score);
+        scoreLabel.setText("Điểm : " + score);
         if (score > bestScore) {
             bestScore = score;
             gamePannel.scoreUpdate();
-            bestScoreLabel.setText("Best Score : " + String.format("%03d", bestScore));
+            bestScoreLabel.setText("Điểm cao nhát : " + String.format("%03d", bestScore));
         }
         if (levelwin == 1) {
             if (level < maxlevel) {
-                JOptionPane.showMessageDialog(controlPannel, "move to next level", "Level Complete", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(controlPannel, "Sang màn khác", "Hoàn thành", JOptionPane.INFORMATION_MESSAGE);
                 if (level == 1) {
                     initBoard2();
                 } else if (level == 2) {
@@ -100,7 +100,7 @@ public class GamePannel8 extends javax.swing.JPanel {
             } else if (level == maxlevel) {
                 win = 1;
                 gamePannel.scoreUpdate();
-                JOptionPane.showMessageDialog(controlPannel, "Yippee you won the game", "Game Complete", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(controlPannel, "Bạn thắng", "Hoàn thành phần chơi", JOptionPane.INFORMATION_MESSAGE);
                 initBoard1();
                 gamePannel.home();
             }
@@ -178,7 +178,7 @@ public class GamePannel8 extends javax.swing.JPanel {
     public void initBoard3() {
         levelwin = 0;
         level = 3;
-        levelLabel.setText("Level : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
+        levelLabel.setText("Màn : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
 
         for (int i = 0; i < 13; i++)//initilize all 0
         {
@@ -343,7 +343,7 @@ public class GamePannel8 extends javax.swing.JPanel {
     public void initBoard2() {
         levelwin = 0;
         level = 2;
-        levelLabel.setText("Level : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
+        levelLabel.setText("Màn : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
 
         for (int i = 0; i < 13; i++)//initilize all 0
         {
@@ -481,7 +481,7 @@ public class GamePannel8 extends javax.swing.JPanel {
     public void initBoard1() {
         levelwin = 0;
         level = 1;
-        levelLabel.setText("Level : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
+        levelLabel.setText("Màn : " + Integer.toString(level) + "/" + Integer.toString(maxlevel));
 
         for (int i = 0; i < 13; i++)//initilize all 0
         {
@@ -740,8 +740,8 @@ public class GamePannel8 extends javax.swing.JPanel {
         setLayout(null);
 
         heading.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
-        heading.setForeground(new java.awt.Color(255, 25, 255));
-        heading.setText("Push Box");
+        heading.setForeground(new java.awt.Color(255, 255, 255));
+        heading.setText("Đẩy thùng");
         add(heading);
         heading.setBounds(180, 0, 300, 90);
 
@@ -760,57 +760,56 @@ public class GamePannel8 extends javax.swing.JPanel {
         controlPannel.setBounds(40, 85, 585, 495);
         controlPannel.getAccessibleContext().setAccessibleName("");
 
-        newButton.setText("reset");
+        newButton.setText("Chơi lại");
         newButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newButtonActionPerformed(evt);
             }
         });
         add(newButton);
-        newButton.setBounds(670, 290, 110, 29);
+        newButton.setBounds(670, 290, 110, 23);
 
-        undoButton.setText("undo");
+        undoButton.setText("Hoàn tác");
         undoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 undoButtonActionPerformed(evt);
             }
         });
         add(undoButton);
-        undoButton.setBounds(670, 360, 110, 29);
+        undoButton.setBounds(670, 360, 110, 23);
 
-        helpButton.setText("help");
+        helpButton.setText("Hướng dẫn");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpButtonActionPerformed(evt);
             }
         });
         add(helpButton);
-        helpButton.setBounds(670, 440, 110, 29);
+        helpButton.setBounds(670, 440, 110, 23);
 
         bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bestScoreLabel.setText("Best Score : 000");
+        bestScoreLabel.setText("Điểm cao nhất : 000");
         add(bestScoreLabel);
         bestScoreLabel.setBounds(580, 20, 240, 50);
 
         levelLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(252, 236, 236));
         levelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        levelLabel.setText("Level : 0/3");
+        levelLabel.setText("Màn : 0/3");
         add(levelLabel);
         levelLabel.setBounds(630, 140, 180, 50);
 
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("Scores : 0");
+        scoreLabel.setText("Điểm : 0");
         add(scoreLabel);
         scoreLabel.setBounds(630, 210, 180, 40);
 
         footerLabel.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         footerLabel.setForeground(new java.awt.Color(255, 244, 244));
-        footerLabel.setText("made with love by Team .EXE");
         add(footerLabel);
         footerLabel.setBounds(40, 590, 250, 20);
 
@@ -851,16 +850,16 @@ public class GamePannel8 extends javax.swing.JPanel {
     }//GEN-LAST:event_undoButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel, "* Use W A S D keys to move player\n"
-                + "* Red dots are your target point\n"
-                + "* Yellow boxes are to be placed on target points (Red Dot)\n"
-                + "* You can undo only the last 3 moves\n"
-                + "* There are total 3 levels\n"
-                + "* First level carries 30 points\n"
-                + "* Second level carries 40 points\n"
-                + "* Third level carries 50 points\n",
-                 "Instructions",
-                 JOptionPane.INFORMATION_MESSAGE
+        JOptionPane.showMessageDialog(controlPannel, "* Sử dụng các phím W A S D để di chuyển người chơi\n"
+                + "* Các chấm đỏ là điểm mục tiêu của bạn\n"
+                + "* Các hộp màu vàng sẽ được đặt tại các điểm mục tiêu (Chấm đỏ)\n"
+                + "* Bạn chỉ có thể hoàn tác 3 nước đi gần nhất\n"
+                + "* Có tổng cộng 3 cấp độ\n"
+                + "* Cấp độ đầu tiên mang lại 30 điểm\n"
+                + "* Cấp độ thứ hai mang lại 40 điểm\n"
+                + "* Cấp độ thứ ba mang lại 50 điểm\n",
+                "Hướng dẫn",
+                JOptionPane.INFORMATION_MESSAGE
         );
         controlPannel.grabFocus();//get focus back to control pannel
     }//GEN-LAST:event_helpButtonActionPerformed

@@ -14,10 +14,6 @@ import javax.swing.Timer;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author srb
- */
 public class GamePannel4 extends javax.swing.JPanel {
 
     private final int board[][] = new int[10][10];//board for values //1 is ccupied
@@ -91,7 +87,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         levelwin = 0;
         level = 1;
         moves = 0;
-        scoreLabel.setText("Score : " + Integer.toString(moves));
+        scoreLabel.setText("Điểm : " + Integer.toString(moves));
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -170,10 +166,10 @@ public class GamePannel4 extends javax.swing.JPanel {
         }
         if (a == 1 && turn == 1) {
             levelwin = 1;
-            JOptionPane.showMessageDialog(controlPannel, "Hurrey you won" + "your score : " + moves + " ", "Game Complete", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(controlPannel, "Bạn giành được : " + moves + " điểm", "Hoàn thành phần chơi", JOptionPane.INFORMATION_MESSAGE);
         }
         if (a == 1 && turn == -1) {//mostly this will work
-            JOptionPane.showMessageDialog(controlPannel, "your score : " + moves + " ", "Game Complete", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(controlPannel, "Điểm của bạn : " + moves + " ", "Hoàn thành phần chơi", JOptionPane.INFORMATION_MESSAGE);
         }
     }//checks if player or bot wins or not
 
@@ -205,7 +201,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         //think code
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                moveTeller.setText("bot thinking .");
+                moveTeller.setText("Lượt của máy .");
             }
         });
         vplayerX = playerX;
@@ -317,7 +313,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 moveUpdate();
-                moveTeller.setText("bot thinking . .");
+                moveTeller.setText("Lượt của máy . .");
             }
         });
         try {
@@ -326,7 +322,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                moveTeller.setText("bot thinking . . .");
+                moveTeller.setText("Lượt của máy . . .");
             }
         });
         try {
@@ -335,7 +331,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                moveTeller.setText("bot thinking . ");
+                moveTeller.setText("Lượt của máy . ");
             }
         });
         try {
@@ -345,7 +341,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         if (moves > 4) {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    moveTeller.setText("bot thinking . .");
+                    moveTeller.setText("Lượt của máy . .");
                 }
             });
             try {
@@ -354,7 +350,7 @@ public class GamePannel4 extends javax.swing.JPanel {
             }
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    moveTeller.setText("bot thinking . . .");
+                    moveTeller.setText("Lượt của máy . . .");
                 }
             });
             try {
@@ -366,7 +362,7 @@ public class GamePannel4 extends javax.swing.JPanel {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 updateBox();
-                moveTeller.setText("your move");
+                moveTeller.setText("Lượt của bạn");
                 wincheck();
                 turn = 1;//give turn to player
                 getlock();
@@ -469,8 +465,8 @@ public class GamePannel4 extends javax.swing.JPanel {
             bestScore = moves;
             gamePannel.scoreUpdate();
         }
-        bestScoreLabel.setText("Best Score : " + Integer.toString(bestScore));
-        scoreLabel.setText("Score : " + Integer.toString(moves));
+        bestScoreLabel.setText("Điểm cao nhất : " + Integer.toString(bestScore));
+        scoreLabel.setText("Điểm : " + Integer.toString(moves));
     }//updates moves
 
     public void lastMove() {
@@ -566,60 +562,59 @@ public class GamePannel4 extends javax.swing.JPanel {
         heading2.setBounds(400, 20, 160, 90);
 
         heading3.setFont(new java.awt.Font("DejaVu Serif", 1, 50)); // NOI18N
-        heading3.setForeground(new java.awt.Color(1, 1, 1));
+        heading3.setForeground(new java.awt.Color(255, 255, 255));
         heading3.setText("black");
         add(heading3);
         heading3.setBounds(120, 20, 160, 90);
 
         moveTeller.setForeground(new java.awt.Color(191, 174, 174));
-        moveTeller.setText("your move ");
+        moveTeller.setText("Lượt của bạn");
         add(moveTeller);
         moveTeller.setBounds(160, 110, 130, 30);
 
         bestScoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         bestScoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         bestScoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bestScoreLabel.setText("Best Score : 0");
+        bestScoreLabel.setText("Điểm cao nhất : 0");
         add(bestScoreLabel);
         bestScoreLabel.setBounds(570, 30, 230, 50);
 
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("Score : 0");
+        scoreLabel.setText("Điểm : 0");
         add(scoreLabel);
         scoreLabel.setBounds(620, 140, 180, 50);
 
-        helpButton.setText("help");
+        helpButton.setText("Hướng dẫn");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpButtonActionPerformed(evt);
             }
         });
         add(helpButton);
-        helpButton.setBounds(670, 440, 110, 29);
+        helpButton.setBounds(670, 440, 110, 23);
 
-        undoButton.setText("undo");
+        undoButton.setText("Đi lại");
         undoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 undoButtonActionPerformed(evt);
             }
         });
         add(undoButton);
-        undoButton.setBounds(670, 360, 110, 29);
+        undoButton.setBounds(670, 360, 110, 23);
 
-        newButton.setText("reset");
+        newButton.setText("Chơi lại");
         newButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newButtonActionPerformed(evt);
             }
         });
         add(newButton);
-        newButton.setBounds(670, 290, 110, 29);
+        newButton.setBounds(670, 290, 110, 23);
 
         footerLabel.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         footerLabel.setForeground(new java.awt.Color(255, 244, 244));
-        footerLabel.setText("made with love by Team .EXE");
         add(footerLabel);
         footerLabel.setBounds(40, 590, 250, 20);
 
@@ -629,15 +624,15 @@ public class GamePannel4 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel, "* Use W A S D keys to move player\n"
-                + "* You and bot will get alternative turns\n"
-                + "* White boxes are to be turned black by visiting them\n"
-                + "* You can visit only adjacent white box\n"
-                + "* Each black box carries 1 point\n"
-                + "* You can undo only the last move\n"
-                + "* Computer will try to block your move\n"
-                + "* Game finishes if you are not able to move further\n",
-                "Instructions",
+        JOptionPane.showMessageDialog(controlPannel, "* Sử dụng các phím W A S D để di chuyển người chơi\n"
+                + "* Bạn và Máy sẽ có lượt chơi thay thế nhau\n"
+                + "* Các ô màu trắng sẽ được chuyển thành màu đen bằng cách di chuyển vào chúng\n"
+                + "* Bạn chỉ có thể ghé thăm ô trắng liền kề\n"
+                + "* Mỗi ô đen mang lại 1 điểm\n"
+                + "* Bạn chỉ có thể hoàn tác bước đi cuối cùng\n"
+                + "* Máy sẽ cố gắng chặn nước đi của bạn\n"
+                + "* Trò chơi kết thúc nếu bạn không thể di chuyển được xa hơn\n",
+                "Hướng dẫn",
                 JOptionPane.INFORMATION_MESSAGE
         );
         controlPannel.grabFocus();//get focus back to control pannel
@@ -646,7 +641,7 @@ public class GamePannel4 extends javax.swing.JPanel {
     private void undoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoButtonActionPerformed
 
         moves = memoryMoves;
-        scoreLabel.setText("Score : " + Integer.toString(moves));
+        scoreLabel.setText("Điểm : " + Integer.toString(moves));
         for (int i = 0; i < 10; i++) {
             System.arraycopy(memoryBoard[i], 0, board[i], 0, 10);
             updateBox();

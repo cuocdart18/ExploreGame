@@ -4,10 +4,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
-/**
- *
- * @author srb
- */
 public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
@@ -16,7 +12,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     public final void myinit() {
-        setSize(1000, 750);
+        setSize(985, 730);
         setResizable(false);
         setAlwaysOnTop(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

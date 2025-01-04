@@ -75,16 +75,16 @@ public class GamePannel2 extends javax.swing.JPanel {
                 maxpics += 2;
                 pictime -= 100;
 
-                scoreLabel.setText("score : " + bestScore);
+                scoreLabel.setText("Điểm : " + bestScore);
                 gamePannel.scoreUpdate();
-                JOptionPane.showMessageDialog(controlPannel, "Move to next level", "Level Complete", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(controlPannel, "Sang level mới", "Hoàn thành phần chơi", JOptionPane.INFORMATION_MESSAGE);
                 initBoard();
             } else if (level == maxlevel) {
                 win = 1;
 
-                scoreLabel.setText("score : " + bestScore);
+                scoreLabel.setText("Điểm : " + bestScore);
                 gamePannel.scoreUpdate();
-                JOptionPane.showMessageDialog(controlPannel, "Yippee you won the game", "Game Complete", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(controlPannel, "Bạn thắng", "Hoàn thành phần chơi", JOptionPane.INFORMATION_MESSAGE);
                 gamePannel.home();
             }
         }
@@ -94,8 +94,8 @@ public class GamePannel2 extends javax.swing.JPanel {
         ansTextField.setVisible(false);
         submitButton.setVisible(false);
         questionLabel.setVisible(false);
-        levelLabel.setText("Level : " + level + "/" + maxlevel);
-        questionLabel.setText("how many times this pic appeared :");
+        levelLabel.setText("Màn : " + level + "/" + maxlevel);
+        questionLabel.setText("Số lần ảnh trên được hiển thị : ");
         a = 0;
         b = 0;
         c = 0;
@@ -226,8 +226,8 @@ public class GamePannel2 extends javax.swing.JPanel {
         setLayout(null);
 
         heading.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
-        heading.setForeground(new java.awt.Color(255, 25, 255));
-        heading.setText("Memory Game");
+        heading.setForeground(new java.awt.Color(255, 255, 255));
+        heading.setText("Ghi nhớ");
         add(heading);
         heading.setBounds(140, 10, 430, 90);
 
@@ -246,51 +246,51 @@ public class GamePannel2 extends javax.swing.JPanel {
         controlPannel.setBounds(60, 150, 500, 288);
         controlPannel.getAccessibleContext().setAccessibleName("");
 
-        newButton.setText("reset");
+        newButton.setText("Chơi lại");
         newButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newButtonActionPerformed(evt);
             }
         });
         add(newButton);
-        newButton.setBounds(670, 290, 110, 29);
+        newButton.setBounds(670, 290, 110, 23);
 
-        submitButton.setText("submit");
+        submitButton.setText("Nhập");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitButtonActionPerformed(evt);
             }
         });
         add(submitButton);
-        submitButton.setBounds(440, 490, 110, 29);
+        submitButton.setBounds(440, 490, 110, 23);
 
-        helpButton.setText("help");
+        helpButton.setText("Hướng dẫn");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpButtonActionPerformed(evt);
             }
         });
         add(helpButton);
-        helpButton.setBounds(670, 350, 110, 29);
+        helpButton.setBounds(670, 350, 110, 23);
 
         levelLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         levelLabel.setForeground(new java.awt.Color(252, 236, 236));
         levelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        levelLabel.setText("Level : 1/3");
+        levelLabel.setText("Màn : 1/3");
         add(levelLabel);
         levelLabel.setBounds(620, 20, 180, 50);
 
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("score : 0");
+        scoreLabel.setText("Điểm : 0");
         add(scoreLabel);
         scoreLabel.setBounds(620, 120, 180, 50);
 
         questionLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 18)); // NOI18N
-        questionLabel.setForeground(new java.awt.Color(230, 116, 26));
+        questionLabel.setForeground(new java.awt.Color(255, 255, 255));
         questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        questionLabel.setText("how many times this pic appeared :");
+        questionLabel.setText("Số lần ảnh trên được hiển thị : ");
         add(questionLabel);
         questionLabel.setBounds(80, 430, 350, 50);
         questionLabel.getAccessibleContext().setAccessibleDescription("");
@@ -305,7 +305,6 @@ public class GamePannel2 extends javax.swing.JPanel {
 
         footerLabel.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         footerLabel.setForeground(new java.awt.Color(255, 244, 244));
-        footerLabel.setText("made with love by Team .EXE");
         add(footerLabel);
         footerLabel.setBounds(40, 590, 250, 20);
 
@@ -319,15 +318,15 @@ public class GamePannel2 extends javax.swing.JPanel {
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(controlPannel, "* Count number of times every pic is shown\n"
-                + "* At end a picture will be displayed\n"
-                + "* Enter number of times it was displayed\n"
-                + "* You can press enter or click submit button to submit ans\n"
-                + "* You can answer only once. However you reset level\n"
-                + "* First level carries 10 points\n"
-                + "* Second level carries 15 points\n"
-                + "* Third level carries 20 points\n",
-                "Instructions",
+        JOptionPane.showMessageDialog(controlPannel, "* Đếm số lần hiển thị của mỗi bức ảnh\n"
+                + "* Bức ảnh cuối cùng được hiển thị\n"
+                + "* Nhập số lần nó được hiển thị\n"
+                + "* Bạn có thể nhấn Enter hoặc nhấp vào nút Nhập để gửi câu trả lời\n"
+                + "* Bạn chỉ có thể trả lời một lần. Tuy nhiên, bạn có thể chơi lại\n"
+                + "* Cấp độ đầu tiên được 10 điểm\n"
+                + "* Cấp độ thứ hai được 15 điểm\n"
+                + "* Cấp độ thứ ba được 20 điểm\n",
+                "Thông báo",
                 JOptionPane.INFORMATION_MESSAGE
         );
         controlPannel.grabFocus();//get focus back to control pannel
@@ -344,21 +343,21 @@ public class GamePannel2 extends javax.swing.JPanel {
             if (digit.charAt(0) >= '0' && digit.charAt(0) <= '9' && digit.length() == 1) {
                 validans = true;
                 if (ans == Integer.parseInt(ansTextField.getText())) {
-                    questionLabel.setText("Correct Answer !!!");
+                    questionLabel.setText("Chính xác !!!");
                     ansTextField.setVisible(false);
                     submitButton.setVisible(false);
                     gameFinish();
                     ansTextField.setText("");
                     return;
                 } else {
-                    questionLabel.setText("Wrong Ans .... plz reset ...");
+                    questionLabel.setText("Sai! Ấn nút Chơi lại");
                     ansTextField.setVisible(false);
                     submitButton.setVisible(false);
 
                 }
             }
             if (validans == false) {
-                questionLabel.setText("Invalid Ans .... plz reset ...");
+                questionLabel.setText("Không hợp lệ! Ấn nút Chơi lại");
                 ansTextField.setVisible(false);
                 submitButton.setVisible(false);
             }

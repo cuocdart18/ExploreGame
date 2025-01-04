@@ -161,8 +161,7 @@ public class GamePannel1 extends javax.swing.JPanel {
             index = 4;
         } else if (marked[4] == bot && marked[6] == bot && marked[2] == 0) {
             index = 2;
-        } //other winning
-        else if (marked[0] == me && marked[1] == me && marked[2] == 0) {
+        } else if (marked[0] == me && marked[1] == me && marked[2] == 0) {
             index = 2;
         } else if (marked[0] == me && marked[2] == me && marked[1] == 0) {
             index = 1;
@@ -213,9 +212,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         } else {
             randomfirst();
             this.turn = -turn;
-
             return;
-
         }
 
         switch (index) {
@@ -365,33 +362,32 @@ public class GamePannel1 extends javax.swing.JPanel {
                 if (you_win - comp_wins == 1 && bestScore == 0) {
                     bestScore = 10;
                     gamePannel.scoreUpdate();
-                    JOptionPane.showMessageDialog(dialog, "you win");
+                    JOptionPane.showMessageDialog(dialog, "Bạn thắng");
                 } else if (you_win - comp_wins == 2 && bestScore == 10) {
                     bestScore = 20;
                     gamePannel.scoreUpdate();
-                    JOptionPane.showMessageDialog(dialog, "you win");
+                    JOptionPane.showMessageDialog(dialog, "Bạn thắng");
                 } else if (you_win - comp_wins >= 3 && bestScore == 20) {
                     bestScore = 30;
                     you_win = 0;
                     comp_wins = 0;
                     gamePannel.scoreUpdate();
-                    JOptionPane.showMessageDialog(dialog, "you win");
+                    JOptionPane.showMessageDialog(dialog, "Bạn thắng");
                     gamePannel.home();
                 } else {
-                    JOptionPane.showMessageDialog(dialog, "you win");
+                    JOptionPane.showMessageDialog(dialog, "Bạn thắng");
                 }
-
             } else {
-                JOptionPane.showMessageDialog(dialog, "BOT wins");
+                JOptionPane.showMessageDialog(dialog, "Máy thắng");
                 comp_wins++;
             }
-            jLabel4.setText("YOU : " + you_win + "");
-            jLabel2.setText("COMP : " + comp_wins + "");
-            scoreLabel.setText("score : " + bestScore);
+            jLabel4.setText("BẠN : " + you_win + "");
+            jLabel2.setText("MÁY : " + comp_wins + "");
+            scoreLabel.setText("Điểm : " + bestScore);
             resete();
         }
         if (fill == 9) {
-            JOptionPane.showMessageDialog(dialog, "Draw!");
+            JOptionPane.showMessageDialog(dialog, "Hoà!");
             resete();
         }
     }
@@ -424,7 +420,7 @@ public class GamePannel1 extends javax.swing.JPanel {
         setOpaque(false);
         setLayout(null);
 
-        resetButton.setText("reset");
+        resetButton.setText("Chơi lại");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
@@ -436,19 +432,20 @@ public class GamePannel1 extends javax.swing.JPanel {
         scoreLabel.setFont(new java.awt.Font("TakaoPGothic", 1, 24)); // NOI18N
         scoreLabel.setForeground(new java.awt.Color(252, 236, 236));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("Score : 0");
+        scoreLabel.setText("Điểm : 0");
         add(scoreLabel);
         scoreLabel.setBounds(580, 130, 180, 50);
 
         jLabel5.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 236, 236));
-        jLabel5.setText("TIC TAC TOE");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Cờ Caro");
         add(jLabel5);
         jLabel5.setBounds(310, 30, 160, 40);
 
         jLabel2.setFont(new java.awt.Font("Ume P Gothic S5", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(230, 230, 230));
-        jLabel2.setText("COMP : 0");
+        jLabel2.setText("MÁY : 0");
         add(jLabel2);
         jLabel2.setBounds(100, 510, 100, 40);
         add(dialog);
@@ -456,11 +453,11 @@ public class GamePannel1 extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("UnGungseo", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(211, 211, 211));
-        jLabel4.setText("YOU : 0");
+        jLabel4.setText("BẠN : 0");
         add(jLabel4);
         jLabel4.setBounds(320, 500, 90, 50);
 
-        helpButton.setText("help");
+        helpButton.setText("Hướng dẫn");
         helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 helpButtonActionPerformed(evt);
@@ -570,152 +567,116 @@ public class GamePannel1 extends javax.swing.JPanel {
         if (checkboard(2, 1)) {
             board[2][1] = turn;
             box8.setText("O");
-
             turn = -turn;
             showe();
-
             movegen(turn);
-
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box8ActionPerformed
 
     private void box9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box9ActionPerformed
         if (checkboard(2, 2)) {
             board[2][2] = turn;
-
             box9.setText("O");
-
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box9ActionPerformed
 
     private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
         if (checkboard(0, 0)) {
             board[0][0] = turn;
-
             box1.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            // randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box1ActionPerformed
 
     private void box2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box2ActionPerformed
         if (checkboard(0, 1)) {
             board[0][1] = turn;
-
             box2.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box2ActionPerformed
 
     private void box3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box3ActionPerformed
         if (checkboard(0, 2)) {
             board[0][2] = turn;
-
             box3.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box3ActionPerformed
 
     private void box4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box4ActionPerformed
         if (checkboard(1, 0)) {
             board[1][0] = turn;
-
             box4.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box4ActionPerformed
 
     private void box5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box5ActionPerformed
-
         if (checkboard(1, 1)) {
             board[1][1] = turn;
-
             box5.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box5ActionPerformed
 
     private void box6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box6ActionPerformed
         if (checkboard(1, 2)) {
             board[1][2] = turn;
-
             box6.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box6ActionPerformed
 
     private void box7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box7ActionPerformed
         if (checkboard(2, 0)) {
             board[2][0] = turn;
-
             box7.setText("O");
             turn = -turn;
             showe();
-            //if(ctfill()==0)
-            //  randomfirst();
-            //else
             movegen(turn);
             showe();
         } else
-            JOptionPane.showMessageDialog(dialog, "Position filled");
+            JOptionPane.showMessageDialog(dialog, "ô đã được điền");
     }//GEN-LAST:event_box7ActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-        JOptionPane.showMessageDialog(jPanel2, "* You will have to win 3 times more than the bot to win\n"
-                + "* Every win will give you 10 points\n",
-                 "Instructions",
-                 JOptionPane.INFORMATION_MESSAGE
+        JOptionPane.showMessageDialog(
+                jPanel2,
+                "* Bạn sẽ phải thắng Máy 3 lần mới có thể thắng\n* Mỗi lần thắng, bạn sẽ nhận được 10 điểm\n",
+                "Hướng dẫn",
+                JOptionPane.INFORMATION_MESSAGE
         );
         //controlPannel.grabFocus();//get focus back to control pannel
     }//GEN-LAST:event_helpButtonActionPerformed

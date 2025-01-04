@@ -79,7 +79,7 @@
           <Font name="DejaVu Serif" size="50" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="1" green="1" red="1" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="black"/>
       </Properties>
@@ -94,7 +94,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ae" green="ae" red="bf" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="your move "/>
+        <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1ee3;t c&#x1ee7;a b&#x1ea1;n"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -111,7 +111,7 @@
           <Color blue="ec" green="ec" red="fc" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Best Score : 0"/>
+        <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m cao nh&#x1ea5;t : 0"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -128,7 +128,7 @@
           <Color blue="ec" green="ec" red="fc" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Score : 0"/>
+        <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m : 0"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -138,7 +138,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="helpButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="help"/>
+        <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng d&#x1eab;n"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="helpButtonActionPerformed"/>
@@ -151,7 +151,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="undoButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="undo"/>
+        <Property name="text" type="java.lang.String" value="&#x110;i l&#x1ea1;i"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="undoButtonActionPerformed"/>
@@ -164,7 +164,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="newButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="reset"/>
+        <Property name="text" type="java.lang.String" value="Ch&#x1a1;i l&#x1ea1;i"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newButtonActionPerformed"/>
@@ -183,7 +183,6 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f4" green="f4" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="made with love by Team .EXE"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

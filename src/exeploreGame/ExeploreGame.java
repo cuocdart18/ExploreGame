@@ -7,27 +7,27 @@ public class ExeploreGame {
     static String userId;
 
     public static void main(String[] args) {
-        while (true) {
-            final String password = JOptionPane.showInputDialog(null, "Enter Password", "Password", JOptionPane.INFORMATION_MESSAGE);
-            if (password == null) {
-                continue;
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
-            if (password.compareTo("cheema") == 0) {
-                break;
-            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        while (true) {
-            userId = JOptionPane.showInputDialog(null, "Enter User ID", "user id", JOptionPane.INFORMATION_MESSAGE);
-            if (userId == null) {
-                continue;
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MainFrame().setVisible(true);
             }
-            if (userId.compareTo("") != 0) {
-                break;
-            }
-        }
-        java.awt.EventQueue.invokeLater(() -> {
-            final MainFrame mainframe = new MainFrame();
-            mainframe.setVisible(true);
         });
 
     }

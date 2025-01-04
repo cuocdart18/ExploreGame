@@ -96,7 +96,7 @@ public class GamePannel extends javax.swing.JPanel {
                 if (gamePannel1.bestScore < 30) {
                     card.show(controlPannel, "gamePannel1");
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 2://memory
@@ -106,7 +106,7 @@ public class GamePannel extends javax.swing.JPanel {
                     gamePannel2.resetLevel();
                     gamePannel2.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 3://queen8
@@ -114,7 +114,7 @@ public class GamePannel extends javax.swing.JPanel {
                 if (gamePannel3.bestScore < 40) {
                     card.show(controlPannel, "gamePannel3");
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 4://black vs white
@@ -123,7 +123,7 @@ public class GamePannel extends javax.swing.JPanel {
                     card.show(controlPannel, "gamePannel4");
                     gamePannel4.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 5://pic 4x4
@@ -132,7 +132,7 @@ public class GamePannel extends javax.swing.JPanel {
                     card.show(controlPannel, "gamePannel5");
                     gamePannel5.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 6://snake
@@ -141,7 +141,7 @@ public class GamePannel extends javax.swing.JPanel {
                     card.show(controlPannel, "gamePannel6");
                     gamePannel6.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 7://
@@ -150,7 +150,7 @@ public class GamePannel extends javax.swing.JPanel {
                     card.show(controlPannel, "gamePannel7");
                     gamePannel7.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
             case 8:
@@ -159,7 +159,7 @@ public class GamePannel extends javax.swing.JPanel {
                     card.show(controlPannel, "gamePannel8");
                     gamePannel8.getFocus();
                 } else {
-                    JOptionPane.showMessageDialog(controlPannel, "Game is completed");
+                    JOptionPane.showMessageDialog(controlPannel, "Hoàn thành trò chơi");
                 }
                 break;
         }
@@ -176,7 +176,7 @@ public class GamePannel extends javax.swing.JPanel {
                     if (hours == 0 && minutes == 0 && seconds == 0) {
                         clockTimer.stop();
                         timerlock = 2;
-                        JOptionPane.showMessageDialog(controlPannel, "TimeUp");
+                        JOptionPane.showMessageDialog(controlPannel, "Hết giờ");
                         card.show(controlPannel, "finalPannel");
                         finalPannel.shader.start();
                     }
@@ -204,7 +204,7 @@ public class GamePannel extends javax.swing.JPanel {
     public void scoreUpdate() {
         totalScore = gamePannel1.bestScore + gamePannel2.bestScore + gamePannel3.bestScore + gamePannel4.bestScore
                 + gamePannel5.bestScore + gamePannel6.bestScore + gamePannel7.bestScore + gamePannel8.bestScore;
-        scoreLabel.setText("Score : " + String.format("%03d", totalScore));
+        scoreLabel.setText("Điểm : " + String.format("%03d", totalScore));
     }
 
     public void initBoard() {
@@ -245,12 +245,12 @@ public class GamePannel extends javax.swing.JPanel {
         userIdLabel.setForeground(new java.awt.Color(36, 36, 36));
 
         scoreLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
-        scoreLabel.setForeground(new java.awt.Color(36, 36, 36));
+        scoreLabel.setForeground(new java.awt.Color(255, 255, 255));
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("Score : 000");
+        scoreLabel.setText("Điểm : 000");
 
         timeLabel.setFont(new java.awt.Font("Ubuntu", 0, 17)); // NOI18N
-        timeLabel.setForeground(new java.awt.Color(36, 36, 36));
+        timeLabel.setForeground(new java.awt.Color(255, 255, 255));
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         timeLabel.setText("2:00:00");
         timeLabel.setToolTipText("");
