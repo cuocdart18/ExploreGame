@@ -8,6 +8,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import static java.lang.Math.random;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -34,6 +37,7 @@ public class GamePannel5 extends javax.swing.JPanel {
     RawBox mainBox = null;
 
     class RawBox {
+
         int type;//0 for null //2 for game area 
         int x, y;
         int picIndex;
@@ -167,7 +171,8 @@ public class GamePannel5 extends javax.swing.JPanel {
                 board[i][j].type = 2;//game area
             }
         }
-        puzzleGenerate();
+//        puzzleGenerate();
+        puzzleGenerate2();
 
         mainBox = board[4][4];
 
@@ -301,7 +306,7 @@ public class GamePannel5 extends javax.swing.JPanel {
         int inversion, flag;
         while (true) {
             inversion = 0;
-            
+
             //set all 0
             for (int i = 1; i < 5; i++) {
                 for (int j = 1; j < 5; j++) {
@@ -335,9 +340,9 @@ public class GamePannel5 extends javax.swing.JPanel {
                     }
                 }
             }
-            
+
             int forinversion[] = new int[15], index = 0;
-            
+
             for (int i = 1; i < 5; i++) {
                 for (int j = 1; j < 5; j++) {
                     if (i == 4 && j == 4) {
@@ -346,7 +351,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                     forinversion[index++] = board[i][j].picIndex;
                 }
             }
-            
+
             for (int i = 0; i < 14; i++) {
                 for (int j = i + 1; j < 15; j++) {
                     if (forinversion[i] > forinversion[j]) {
@@ -354,10 +359,43 @@ public class GamePannel5 extends javax.swing.JPanel {
                     }
                 }
             }
-            
+
             if (inversion % 2 == 0) {
                 break;
             }
+        }
+    }
+
+    public void puzzleGenerate2() {
+        int[] arr = new int[15];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
+
+        shuffleArray(arr);
+
+        int index = 0;
+        for (int i = 1; i < 5; i++) {
+            for (int j = 1; j < 5; j++) {
+                if (i == 4 && j == 4) {
+                    break;
+                } else {
+                    board[i][j].picIndex = arr[index++];
+                }
+            }
+        }
+    }
+
+    public void shuffleArray(int[] array) {
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            // Pick a random index from 0 to i
+            int j = random.nextInt(i + 1);
+
+            // Swap array[i] with array[j]
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 
