@@ -8,10 +8,6 @@ import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author srb
- */
 public class GamePannel3 extends javax.swing.JPanel implements ActionListener {
 
     private final int[][] board;

@@ -11,10 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author srb
- */
 public class GamePannel8 extends javax.swing.JPanel {
 
     int board[][] = new int[13][15];//board for values

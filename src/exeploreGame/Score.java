@@ -2,9 +2,6 @@ package exeploreGame;
 
 import java.io.*;
 
-/**
- * Created by akatsuki(https://github.com/Akatsuki06) on 3/10/17.
- */
 public class Score {
 
     /*Use Score.getScore(fileName) to get the score

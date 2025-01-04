@@ -5,10 +5,6 @@ import java.awt.Color;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author srb
- */
 public class HomePannel extends javax.swing.JPanel {
 
     Border darkborder = new LineBorder(Color.DARK_GRAY, 1);

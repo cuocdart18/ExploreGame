@@ -16,7 +16,7 @@ import javax.swing.border.LineBorder;
 
 public class GamePannel5 extends javax.swing.JPanel {
 
-    final private rawBox board[][] = new rawBox[31][31];//board for values
+    final private RawBox board[][] = new RawBox[31][31];//board for values
     int win = 0, levelwin = 0, movesLeft = 300, totalmoves = 0, level, maxlevel = 1, bestScore = 0;
 
     final private Border darkborder = new LineBorder(Color.DARK_GRAY, 1);
@@ -31,10 +31,9 @@ public class GamePannel5 extends javax.swing.JPanel {
 
     //game variables
     int picnum = 0;//randomly generated pic num
-    rawBox mainBox = null;
+    RawBox mainBox = null;
 
-    class rawBox {
-
+    class RawBox {
         int type;//0 for null //2 for game area 
         int x, y;
         int picIndex;
@@ -154,10 +153,9 @@ public class GamePannel5 extends javax.swing.JPanel {
         movesLeft = 300;
         movesLabel.setText("Số lượt : " + Integer.toString(movesLeft));
 
-        for (int i = 0; i < 6; i++)//initilize all 0
-        {
+        for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
-                board[i][j] = new rawBox();
+                board[i][j] = new RawBox();
                 board[i][j].x = j;
                 board[i][j].y = i;
                 board[i][j].type = 0;
@@ -276,8 +274,8 @@ public class GamePannel5 extends javax.swing.JPanel {
     public void wincheck() {//checks whether game finished or not
         if (movesLeft == 0) {
             JOptionPane.showMessageDialog(controlPannel, "Bạn thua !\n",
-                     "Thông báo",
-                     JOptionPane.INFORMATION_MESSAGE
+                    "Thông báo",
+                    JOptionPane.INFORMATION_MESSAGE
             );
             initBoard();
             controlPannel.grabFocus();//get focus back to control pannel
@@ -303,9 +301,9 @@ public class GamePannel5 extends javax.swing.JPanel {
         int inversion, flag;
         while (true) {
             inversion = 0;
-
-            for (int i = 1; i < 5; i++)//set all 0
-            {
+            
+            //set all 0
+            for (int i = 1; i < 5; i++) {
                 for (int j = 1; j < 5; j++) {
                     board[i][j].picIndex = 0;
                 }
@@ -337,7 +335,9 @@ public class GamePannel5 extends javax.swing.JPanel {
                     }
                 }
             }
+            
             int forinversion[] = new int[15], index = 0;
+            
             for (int i = 1; i < 5; i++) {
                 for (int j = 1; j < 5; j++) {
                     if (i == 4 && j == 4) {
@@ -346,6 +346,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                     forinversion[index++] = board[i][j].picIndex;
                 }
             }
+            
             for (int i = 0; i < 14; i++) {
                 for (int j = i + 1; j < 15; j++) {
                     if (forinversion[i] > forinversion[j]) {
@@ -353,6 +354,7 @@ public class GamePannel5 extends javax.swing.JPanel {
                     }
                 }
             }
+            
             if (inversion % 2 == 0) {
                 break;
             }
@@ -462,14 +464,13 @@ public class GamePannel5 extends javax.swing.JPanel {
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
-
         JOptionPane.showMessageDialog(controlPannel, "* Nhấp vào hình ảnh bên cạnh hình ảnh trống để thay đổi vị trí của nó\n"
                 + "* Bạn cũng có thể sử dụng các phím W A S D để di chuyển hình ảnh trống theo hướng tương ứng\n"
                 + "* Trò chơi phải kết thúc trong vòng 300 lượt di chuyển\n"
                 + "* Điểm (bằng số nước đi còn lại) chỉ được trao khi toàn bộ bức tranh được xếp đúng trật tự\n"
                 + "* Nhận được tối đa 150 điểm\n",
-                 "Thông báo",
-                 JOptionPane.INFORMATION_MESSAGE
+                "Thông báo",
+                JOptionPane.INFORMATION_MESSAGE
         );
         controlPannel.grabFocus();//get focus back to control pannel
     }//GEN-LAST:event_helpButtonActionPerformed

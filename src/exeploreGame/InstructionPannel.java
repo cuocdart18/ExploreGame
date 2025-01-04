@@ -2,10 +2,6 @@ package exeploreGame;
 
 import java.awt.Color;
 
-/**
- *
- * @author srb
- */
 public class InstructionPannel extends javax.swing.JPanel {
 
     int shade = 0;
@@ -55,7 +51,7 @@ public class InstructionPannel extends javax.swing.JPanel {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
         }
-        welcomeLabel.setText("Exeplore");
+        welcomeLabel.setText("8Games");
         for (int i = 0; i < 150; i++) {
             shade = i;
             java.awt.EventQueue.invokeLater(new Runnable() {

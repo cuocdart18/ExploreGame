@@ -2,10 +2,6 @@ package exeploreGame;
 
 import java.awt.Color;
 
-/**
- *
- * @author srb
- */
 public class FinalPannel extends javax.swing.JPanel {
 
     int shade = 0;

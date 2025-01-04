@@ -9,10 +9,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-/**
- *
- * @author srb
- */
 public class GamePannel2 extends javax.swing.JPanel {
 
     int win = 0, levelwin = 0, level = 1, maxlevel = 3, bestScore = 0;
